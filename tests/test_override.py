@@ -1,5 +1,8 @@
 import pytest
-from pydantic import BaseSettings
+try:
+    from pydantic_settings import BaseSettings
+except ImportError:
+    from pydantic import BaseSettings
 
 from override_settings import async_override_settings, override_settings, check_value
 
